@@ -20,7 +20,6 @@ package accounts
 
 import (
 	"fmt"
-
 	"github.com/onflow/flow-cli/pkg/flowkit"
 
 	"github.com/spf13/cobra"
@@ -67,7 +66,7 @@ func addContract(
 		return nil, err
 	}
 
-	account, err := services.Accounts.AddContract(to, name, code, false)
+	account, err := services.Accounts.AddContract(to, name, code, false, nil)
 	if err != nil {
 		return nil, err
 	}

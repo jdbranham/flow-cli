@@ -67,7 +67,7 @@ func updateContract(
 		return nil, err
 	}
 
-	account, err := services.Accounts.AddContract(to, name, code, true)
+	account, err := services.Accounts.AddContract(to, name, code, true, nil)
 	if err != nil {
 		return nil, err
 	}
