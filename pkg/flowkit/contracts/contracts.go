@@ -27,7 +27,7 @@ import (
 
 	"github.com/onflow/cadence/runtime/ast"
 	"github.com/onflow/cadence/runtime/common"
-	"github.com/onflow/cadence/runtime/parser"
+	parser "github.com/onflow/cadence/runtime/parser2"
 	"github.com/onflow/flow-go-sdk"
 	"gonum.org/v1/gonum/graph"
 	"gonum.org/v1/gonum/graph/simple"
