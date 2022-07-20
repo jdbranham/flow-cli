@@ -7,11 +7,11 @@ require (
 	github.com/gosuri/uilive v0.0.4
 	github.com/joho/godotenv v1.4.0
 	github.com/manifoldco/promptui v0.9.0
-	github.com/onflow/cadence v0.24.2-0.20220627202951-5a06fec82b4a
+	github.com/onflow/cadence v0.24.6
 	github.com/onflow/flow-core-contracts/lib/go/templates v0.11.2-0.20220513155751-c4c1f8d59f83
-	github.com/onflow/flow-emulator v0.33.4-0.20220705151023-2cc6a4f25a20
-	github.com/onflow/flow-go v0.25.13-0.20220706165514-abf4535fe946
-	github.com/onflow/flow-go-sdk v0.26.5-0.20220629191626-900f9f91bffc
+	github.com/onflow/flow-emulator v0.33.2
+	github.com/onflow/flow-go v0.26.16
+	github.com/onflow/flow-go-sdk v0.26.5
 	github.com/sirupsen/logrus v1.8.1
 	github.com/spf13/afero v1.8.2
 	github.com/stretchr/testify v1.7.5
@@ -25,7 +25,6 @@ require (
 	cloud.google.com/go/compute v1.3.0 // indirect
 	cloud.google.com/go/iam v0.3.0 // indirect
 	cloud.google.com/go/kms v1.4.0 // indirect
-	github.com/bits-and-blooms/bitset v1.2.2 // indirect
 	github.com/btcsuite/btcd v0.22.0-beta // indirect
 	github.com/cespare/xxhash v1.1.0 // indirect
 	github.com/chzyer/readline v0.0.0-20180603132655-2972be24d48e // indirect
@@ -45,11 +44,16 @@ require (
 	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/golang/snappy v0.0.3 // indirect
 	github.com/google/go-cmp v0.5.7 // indirect
+	github.com/google/uuid v1.3.0 // indirect
 	github.com/googleapis/gax-go/v2 v2.1.1 // indirect
 	github.com/hashicorp/golang-lru v0.5.4 // indirect
 	github.com/hashicorp/hcl v1.0.0 // indirect
 	github.com/inconshreveable/mousetrap v1.0.0 // indirect
+	github.com/ipfs/go-block-format v0.0.3 // indirect
 	github.com/ipfs/go-cid v0.1.0 // indirect
+	github.com/ipfs/go-datastore v0.5.1 // indirect
+	github.com/ipfs/go-ipfs-util v0.0.2 // indirect
+	github.com/jbenet/goprocess v0.1.4 // indirect
 	github.com/kevinburke/go-bindata v3.22.0+incompatible // indirect
 	github.com/klauspost/compress v1.15.1 // indirect
 	github.com/klauspost/cpuid/v2 v2.0.14 // indirect
