@@ -39,6 +39,12 @@ type Keys struct {
 	logger  output.Logger
 }
 
+type KeysService interface {
+	Generate(inputSeed string, sigAlgo crypto.SignatureAlgorithm) (crypto.PrivateKey, error)
+	DecodeRLP(publicKey string) (*flow.AccountKey, error)
+	DecodePEM(key string, sigAlgo crypto.SignatureAlgorithm) (*flow.AccountKey, error)
+}
+
 // NewKeys returns a new keys service.
 func NewKeys(
 	gateway gateway.Gateway,

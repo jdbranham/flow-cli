@@ -37,6 +37,15 @@ type Blocks struct {
 	logger  output.Logger
 }
 
+type BlocksService interface {
+	GetBlock(
+		query string,
+		eventType string,
+		verbose bool,
+	) (*flow.Block, []flow.BlockEvents, []*flow.Collection, error)
+	GetLatestBlockHeight() (uint64, error)
+}
+
 // NewBlocks returns a new blocks service.
 func NewBlocks(
 	gateway gateway.Gateway,

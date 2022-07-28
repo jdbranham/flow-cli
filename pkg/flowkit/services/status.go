@@ -31,6 +31,10 @@ type Status struct {
 	logger  output.Logger
 }
 
+type StatusService interface {
+	Ping(network string) (string, error)
+}
+
 // NewStatus returns a new status service.
 func NewStatus(
 	gateway gateway.Gateway,

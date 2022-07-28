@@ -33,6 +33,10 @@ type Snapshot struct {
 	logger  output.Logger
 }
 
+type SnapshotService interface {
+	GetLatestProtocolStateSnapshot() ([]byte, error)
+}
+
 // NewSnapshot returns a new snapshot service.
 func NewSnapshot(
 	gateway gateway.Gateway,

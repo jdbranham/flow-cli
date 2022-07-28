@@ -44,6 +44,34 @@ type Accounts struct {
 	logger  output.Logger
 }
 
+type AccountsService interface {
+	Get(address flow.Address) (*flow.Account, error)
+	StakingInfo(address flow.Address) ([]map[string]interface{}, []map[string]interface{}, error)
+	NodeTotalStake(nodeId string, chain flow.ChainID) (*cadence.Value, error)
+	Create(
+		signer *flowkit.Account,
+		pubKeys []crypto.PublicKey,
+		keyWeights []int,
+		sigAlgo []crypto.SignatureAlgorithm,
+		hashAlgo []crypto.HashAlgorithm,
+		contractArgs []string,
+	) (*flow.Account, error)
+	AddContract(
+		account *flowkit.Account,
+		contractName string,
+		contractSource []byte,
+		updateExisting bool,
+	) (*flow.Account, error)
+	RemoveContract(
+		account *flowkit.Account,
+		contractName string,
+	) (*flow.Account, error)
+	prepareTransaction(
+		tx *flowkit.Transaction,
+		account *flowkit.Account,
+	) (*flowkit.Transaction, error)
+}
+
 // NewAccounts returns a new accounts service.
 func NewAccounts(
 	gateway gateway.Gateway,

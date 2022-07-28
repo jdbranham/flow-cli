@@ -38,6 +38,11 @@ type Events struct {
 	logger  output.Logger
 }
 
+type EventsService interface {
+	Get(events []string, startHeight uint64, endHeight uint64, blockCount uint64, workerCount int) ([]flow.BlockEvents, error)
+	eventWorker(jobChan <-chan grpc.EventRangeQuery, results chan<- EventWorkerResult)
+}
+
 // NewEvents returns a new events service.
 func NewEvents(
 	gateway gateway.Gateway,

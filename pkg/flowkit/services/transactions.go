@@ -44,6 +44,44 @@ type Transactions struct {
 	logger  output.Logger
 }
 
+type TransactionsService interface {
+	GetStatus(
+		id flow.Identifier,
+		waitSeal bool,
+	) (*flow.Transaction, *flow.TransactionResult, error)
+	Build(
+		proposer flow.Address,
+		authorizers []flow.Address,
+		payer flow.Address,
+		proposerKeyIndex int,
+		code []byte,
+		codeFilename string,
+		gasLimit uint64,
+		args []cadence.Value,
+		network string,
+		approveBuild bool,
+	) (*flowkit.Transaction, error)
+	Sign(
+		signer *flowkit.Account,
+		payload []byte,
+		approveSigning bool,
+	) (*flowkit.Transaction, error)
+	SendSigned(
+		payload []byte,
+		approveSend bool,
+	) (*flow.Transaction, *flow.TransactionResult, error)
+	Send(
+		signer *flowkit.Account,
+		code []byte,
+		codeFilename string,
+		gasLimit uint64,
+		args []cadence.Value,
+		network string,
+	) (*flow.Transaction, *flow.TransactionResult, error)
+	GetRLP(rlpUrl string) ([]byte, error)
+	PostRLP(rlpUrl string, tx *flow.Transaction) error
+}
+
 // NewTransactions returns a new transactions service.
 func NewTransactions(
 	gateway gateway.Gateway,

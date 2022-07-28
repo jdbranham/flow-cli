@@ -33,6 +33,10 @@ type Collections struct {
 	logger  output.Logger
 }
 
+type CollectionsService interface {
+	Get(id flow.Identifier) (*flow.Collection, error)
+}
+
 // NewCollections returns a new collections service.
 func NewCollections(
 	gateway gateway.Gateway,

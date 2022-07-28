@@ -27,16 +27,16 @@ import (
 // Services is a collection of services that provide domain-specific functionality
 // for the different components of a Flow state.
 type Services struct {
-	Accounts     *Accounts
-	Scripts      *Scripts
-	Transactions *Transactions
-	Keys         *Keys
-	Events       *Events
-	Collections  *Collections
-	Project      *Project
-	Blocks       *Blocks
-	Status       *Status
-	Snapshot     *Snapshot
+	Accounts     AccountsService
+	Scripts      ScriptsService
+	Transactions TransactionsService
+	Keys         KeysService
+	Events       EventsService
+	Collections  CollectionsService
+	Project      ProjectService
+	Blocks       BlocksService
+	Status       StatusService
+	Snapshot     SnapshotService
 }
 
 // NewServices returns a new services collection for a state,

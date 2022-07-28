@@ -39,6 +39,10 @@ type Scripts struct {
 	logger  output.Logger
 }
 
+type ScriptsService interface {
+	Execute(code []byte, args []cadence.Value, scriptPath string, network string) (cadence.Value, error)
+}
+
 // NewScripts returns a new scripts service.
 func NewScripts(
 	gateway gateway.Gateway,

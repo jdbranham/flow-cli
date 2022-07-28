@@ -41,6 +41,18 @@ type Project struct {
 	logger  output.Logger
 }
 
+type ProjectService interface {
+	Init(
+		readerWriter flowkit.ReaderWriter,
+		reset bool,
+		global bool,
+		sigAlgo crypto.SignatureAlgorithm,
+		hashAlgo crypto.HashAlgorithm,
+		serviceKey crypto.PrivateKey,
+	) (*flowkit.State, error)
+	Deploy(network string, update bool) ([]*contracts.Contract, error)
+}
+
 // NewProject returns a new state service.
 func NewProject(
 	gateway gateway.Gateway,
